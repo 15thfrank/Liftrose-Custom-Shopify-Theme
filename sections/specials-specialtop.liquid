@@ -1,0 +1,93 @@
+<div class="container {{section.settings.displaybool}}" style="background-color: #000!important;min-height:450px; color:white;">
+    <div class="row row-lg specialoffermain">
+        <div class="specialofferleft text-center">
+            <h1 class="specialofferheadtext text-center">{{section.settings.textone}}</h1>
+            <p class="specialoffersubtext text-center">{{section.settings.texttwo}}</p>
+            <a href="{{section.settings.btnlink}}" class="button specialofferbtn text-center">{{section.settings.btntext}}</a>
+            <p class="specialofferdisctext text-center">{{section.settings.textthree}}</p>
+        </div>
+        <div class="specialofferright text-center">
+            <img src="{{section.settings.offerimg | img_url:'master'}}" style="width:100%;" class="specialofferimg text-center"/>
+        </div>
+    </div>
+</div>
+<style>
+    .specialofferleft, .specialofferright {width:50%;float:left;}
+    @media screen and (max-width: 450px){
+        .specialofferleft, .specialofferright {width: 100%; }
+    }
+    .specialofferleft {padding-bottom:50px;}
+    @media screen and (max-width: 450px){
+        .specialofferleft{padding-top:80px;}
+    }
+    @media screen and (max-width: 1080px){
+        .specialofferleft{padding-top:120px;}
+    }
+    @media screen and (min-width: 1081px){
+        .specialofferleft{padding-top:200px;}
+    }
+    .specialoffermain {vertical-align: middle;}
+    .specialofferheadtext {color:#fff;}
+    .specialoffersubtext {font-size: 1.2em;}
+    .specialofferbtn {font-size: 1.15em;text-transform: uppercase;margin-top:10px;margin-bottom:10px;}
+    .specialofferimg {}
+    .specialofferdisctext {font-size: 1.2em;font-style: italic;}
+
+</style>
+{% schema %}
+    {
+        "name": "Above Fold Section",
+        "settings": [
+            {
+                "type": "text",
+                "label": "Title Text",
+                "id": "textone",
+                "default": "Get a Free LiftRose Supply"
+            },
+            {
+                "id": "texttwo",
+                "type": "text",
+                "label": "Extra text",
+                "default": "Get a free supply that will last you for about 2 weeks to sample our product and see the magic everyones talking about!"
+            },
+            {
+                "id": "btntext",
+                "type": "text",
+                "label": "Button Text",
+                "default": "Get A Free Supply Now"
+            },
+            {
+                "id": "btnlink",
+                "type": "url",
+                "label": "Button Link"
+            },
+            { 
+                "id": "textthree",
+                "type": "text",
+                "label": "Disclaimer Text",
+                "default": "*Limit: One per customer"
+            },
+            {
+                "type": "image_picker",
+                "id": "offerimg",
+                "label": "Offer Image"
+            },
+            {
+                "type":      "radio",
+                "id":        "displaybool",
+                "label":     "Display Special Offer Section?",
+                "options": [
+                    { "value": "displayyes", "label": "Yes" },
+                    { "value": "displayno", "label": "No" }
+                ],
+                "default":   "displayyes"
+            }
+        ]
+    }
+{% endschema %}
+
+{% stylesheet %}
+{% endstylesheet %}
+
+{% javascript %}
+{% endjavascript %}

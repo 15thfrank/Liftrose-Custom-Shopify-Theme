@@ -1,0 +1,78 @@
+<div class="hsseven">
+	<div>
+		<h1>{{section.settings.sectiontitle}}</h1>
+		{% for block in section.blocks %}
+		<div>
+			<p class="testimonialcontent">{{block.settings.testimonialcontent}}</p>
+			<div>
+				<img src=" {{block.settings.testifierimg}} " class="testifierimg" />
+				<p class="testifiername">{{block.settings.testifiername}}</p>
+			</div>
+		</div>
+		{% endfor %}
+	</div>
+</div>
+
+
+{% schema %}
+	{
+		"name": "Testimonials Block",
+		"max_blocks": 5,
+		"settings": [
+			{
+				"id": "sectiontitle",
+				"type": "text",
+				"label": "Section Title",
+				"default": "See What Our Customers Are Saying"
+			}
+		],
+		"blocks": [
+			{
+                "name": "select",
+                "type": "select",
+                "settings": [
+                    {
+                        "id": "testimonialcontent",
+                        "type": "richtext",
+                        "label": "Customer's Testimonial",
+                        "default": "<p>Lorem ipsum dolor. Lorem ipsum dolor. Lorem ipsum dolor.</p>"
+                    },
+                    {
+                        "id": "testifierimg",
+                        "type": "image_picker",
+                        "label": "Select Customer's Image"
+                    },
+                    {
+                        "id": "testifiername",
+                        "type": "text",
+                        "label": "Customer's Name",
+                        "default": "Will Harens"
+                    }
+                ]
+            }
+		],
+		"presets": [
+			{
+                "name": "Testimonials Block",
+                "category": "Arielle Studios",
+                "blocks": [
+                    {
+                        "type": "select"
+                    },
+                    {
+                        "type": "select"
+                    },
+                    {
+                        "type": "select"
+                    }
+                ]
+            }
+		]
+	}
+{% endschema %}
+
+{% stylesheet %}
+{% endstylesheet %}
+
+{% javascript %}
+{% endjavascript %}

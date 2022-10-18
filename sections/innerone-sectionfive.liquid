@@ -1,0 +1,93 @@
+<div class="container ionehsfive">
+	<div class="row row-lg">
+		<div class="container-wrap js-collection-grid js-collectionGrid">
+			<div class="row row-lg text-center"><h1 class="text-center page-title__heading">{{section.settings.sectiontitle}}</h1></div>
+			<div class="row row-lg text-center">
+				{% for block in section.blocks %}
+				<div class="collectionBlock js-collectionBlock block s1 sm_s12 lg_s13 animated fadeInUp" style="padding-left: 10px;padding-right: 10px;min-height: 363px;">
+					<img src="{{block.settings.ingreimg | img_url: 'master'}}" class="" style="width:100%;" alt="" />
+					<div class="collectionBlock-info">
+						<h4 class="" style="text-align:left;">{{block.settings.ingretitle}}</h4>
+						<span style="text-align:left;">{{block.settings.ingredesc}}</span>
+					</div>
+				</div>
+				{% endfor %}
+			</div>
+			<div class="row-lg text-center"><a href="{{section.settings.ingrbtnurl}}" class="button text-center"> {{section.settings.ingrbtn}} </a></div>
+		</div>
+	</div>
+</div>
+{% schema %}
+	{
+		"name": "Ingredients Section",
+		"max_blocks": 3,
+		"settings": [
+			{
+				"id": "sectiontitle",
+				"type": "text",
+				"label": "Section Title",
+				"default": "Unique Formula and High-Performance Ingredients"
+			},
+			{
+				"id": "ingrbtn",
+				"type": "text",
+				"label": "Button Text",
+				"default": "Buy Now"
+			},
+			{
+				"id": "ingrbtnurl",
+				"type": "url",
+				"label": "Button Link"
+			}
+		],
+		"blocks": [
+			{
+				"name": "Select",
+				"type": "select",
+				"settings": [
+					{
+						"id": "ingreimg",
+						"type": "image_picker",
+						"label": "Ingredient Image"
+					},
+					{
+						"id": "ingretitle",
+						"type": "text",
+						"label": "Ingredient Title",
+						"default": "Lorem ipsum dolor."
+					},
+					{
+						"id": "ingredesc",
+						"type": "text",
+						"label": "Ingredient Description",
+						"default": "Lorem ipsum dolor. Lorem ipsum dolor. Lorem ipsum dolor."
+					}
+				]
+			}
+		],
+		"presets": [
+			{
+				"name": "Ingredients Section",
+				"category": "Arielle Studios",
+				"blocks": [
+                    {
+                        "type": "select"
+                    },
+                    {
+                        "type": "select"
+                    },
+					{
+                        "type": "select"
+                    }
+                ]
+			}
+		]
+	}
+{% endschema %}
+
+
+{% stylesheet %}
+{% endstylesheet %}
+
+{% javascript %}
+{% endjavascript %}

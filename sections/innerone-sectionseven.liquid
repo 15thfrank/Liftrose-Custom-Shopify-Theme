@@ -1,0 +1,46 @@
+<div class="container" style="padding-top:40px; padding-bottom:40px;">
+	<div class="row row-lg">
+		<div class="feature-item feature-item--odd">
+			<div class="feature-image animated fadeInLeft productimage text-center" style="text-align: center;">
+				<img src=" {{section.settings.productgraphic | img_url: 'master'}} " class="pimage text-center" alt="" style="max-height: 400px;" />
+			</div>
+			<div class="feature-text animated fadeInRight contenttt text-center" style="height: 400px;display: grid;align-items: center;">
+				<div class="text-center">
+					<img src="{{section.settings.certicon | img_url: 'master'}}" class="cicon text-center" />
+					<h3 class="text-center page-title__heading">{{section.settings.certtext}}</h3>
+				</div>
+			</div>			
+		</div>
+	</div>
+</div>
+
+
+{% schema %}
+	{
+		"name": "Certified Section",
+		"settings": [
+			{
+				"id": "certicon",
+				"type": "image_picker",
+				"label": "Certified Icon"
+			},
+			{
+				"id": "certtext",
+				"type": "text",
+				"label": "Certified Text",
+				"default": "Certified safe and tested formula"
+			},
+			{
+				"id": "productgraphic",
+				"type": "image_picker",
+				"label": "Product Graphic"
+			}
+		]
+	}
+{% endschema %}
+
+{% stylesheet %}
+{% endstylesheet %}
+
+{% javascript %}
+{% endjavascript %}

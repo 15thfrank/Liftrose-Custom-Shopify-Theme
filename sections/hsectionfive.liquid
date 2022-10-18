@@ -1,0 +1,113 @@
+<div class="container hsfive">
+	<div class="row row-lg text-center inline">
+		<div class="certblock s15 block">
+		<img src="{{section.settings.certimgone | img_url: 'medium'}}" alt="" class="certimg" />
+		<p class="certp"> {{section.settings.certpone}} </p>
+		</div>
+		<div class="certblock s15 block">
+		<img src="{{section.settings.certimgtwo | img_url: 'medium'}}" alt="" class="certimg" />
+		<p class="certp"> {{section.settings.certptwo}} </p>
+		</div>
+		<div class="certblock s15 block">
+		<img src="{{section.settings.certimgthree | img_url: 'medium'}}" alt="" class="certimg" />
+		<p class="certp"> {{section.settings.certpthree}} </p>
+		</div>
+		<div class="certblock s15 block">
+		<img src="{{section.settings.certimgfour | img_url: 'medium'}}" alt="" class="certimg" />
+		<p class="certp"> {{section.settings.certpfour}} </p>
+		</div>
+		<div class="certblock s15 block">
+		<img src="{{section.settings.certimgfive | img_url: 'medium'}}" alt="" class="certimg" />
+		<p class="certp"> {{section.settings.certpfive}} </p>
+		</div>
+  	</div>
+  	<div class="row row-lg text-center"><a href=" {{section.settings.certbtnlink}} " class="button text-center"> {{section.settings.certbtntext}} </a>
+    </div>
+</div>
+
+
+{% schema %}
+	{
+		"name": "Certified Section",
+		"settings": [
+			{
+				"id": "certimgone",
+				"type": "image_picker",
+				"label": "Image One"
+			},
+			{
+				"id": "certpone",
+				"type": "text",
+				"label": "Description One",
+				"default": "Lorem ipsum"
+			},
+			{
+				"id": "certimgtwo",
+				"type": "image_picker",
+				"label": "Image Two"
+			},
+			{
+				"id": "certptwo",
+				"type": "text",
+				"label": "Description Two",
+				"default": "Lorem ipsum"
+			},
+			{
+				"id": "certimgthree",
+				"type": "image_picker",
+				"label": "Image Three"
+			},
+			{
+				"id": "certpthree",
+				"type": "text",
+				"label": "Description Three",
+				"default": "Lorem ipsum"
+			},
+			{
+				"id": "certimgfour",
+				"type": "image_picker",
+				"label": "Image Four"
+			},
+			{
+				"id": "certpfour",
+				"type": "text",
+				"label": "Description Four",
+				"default": "Lorem ipsum"
+			},
+			{
+				"id": "certimgfive",
+				"type": "image_picker",
+				"label": "Image Five"
+			},
+			{
+				"id": "certpfive",
+				"type": "text",
+				"label": "Description Five",
+				"default": "Lorem ipsum"
+			},
+			{
+				"id": "certbtnlink",
+				"type": "url",
+				"label": "Button URL"
+			},
+			{
+				"id": "certbtntext",
+				"type": "text",
+				"label": "Button Text",
+				"default": "Buy Now"
+			}
+		],
+		"presets": [
+			{
+        "name": "Certified Section",
+        "category": "Arielle Studios"
+      }
+		]
+	}
+{% endschema %}
+
+{% stylesheet %}
+{% endstylesheet %}
+
+{% javascript %}
+{% endjavascript %}

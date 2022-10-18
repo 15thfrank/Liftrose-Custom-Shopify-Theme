@@ -1,0 +1,63 @@
+<div class="container-wrap" style="height: 100vh;width: 100%;background: linear-gradient(0deg,rgba(255, 255, 255, 0.8),rgba(255,255,255,0.8)),url({{section.settings.backgroundimage | img_url: 'master' }}) no-repeat center;background-size: cover;">
+	<div class="row row-lg" style="">
+		<div class="feature-item" data-alignment="center" style="vertical-align: middle; height:100vh;">
+			<div class="productgraphic feature-image animated fadeInLeft" data-animation="fadeInLeft" style="">
+				<img src="{{section.settings.abfpgraphic | img_url: 'master' }}" alt="" style=""/>
+			</div>
+			<div class="contentblock feature-text animated fadeInRight" data-animation="fadeInRight">
+				<h1 class="size--normal"> {{section.settings.abfheadline}} </h1>
+				<span class="size--large"> {{section.settings.abftext}} </span>
+				<a href="{{section.settings.abfbtnonelink}}" class="button button--normal button--primary">{{section.settings.abfbtnonetext}}</a>
+			</div>
+		</div>
+	</div>
+</div>
+
+
+{% schema %}
+	{
+		"name": "Inner Page 1 Above Fold",
+		"settings": [
+			{
+				"id": "backgroundimage",
+				"type": "image_picker",
+				"label": "Upload Background"
+			},
+			{
+				"id": "abfheadline",
+				"type": "text",
+				"label": "Headline",
+				"default": "A Natural Supplement That Makes A Different On Your Skin."
+			},
+			{
+				"id": "abftext",
+				"type": "richtext",
+				"label": "Brief Pitch",
+				"default": "<p>Lorem ipsum dolor. Lorem ipsum dolor. Lorem ipsum dolor.</p>"
+			},
+			{
+				"id": "abfbtnonelink",
+				"type": "url",
+				"label": "Button Link"
+			},
+			{
+				"id": "abfbtnonetext",
+				"type": "text",
+				"label": "Button Text",
+				"default": "Buy Now"
+			},
+			{
+				"id": "abfpgraphic",
+				"type": "image_picker",
+				"label": "Upload Product Graphic"
+			}
+		]
+	}
+{% endschema %}
+
+
+{% stylesheet %}
+{% endstylesheet %}
+
+{% javascript %}
+{% endjavascript %}

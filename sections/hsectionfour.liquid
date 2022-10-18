@@ -1,0 +1,128 @@
+<div class="container hsfour" style="background-image: url();background: linear-gradient(0deg,rgba(255, 255, 255, 0.8),rgba(255,255,255,0.8)),url({{section.settings.sectionbg | img_url: 'master' }}) no-repeat center;">
+	<div class="row row-lg">
+		<h1 class="page-title__heading text-center"> {{section.settings.sectiontitle}} </h1>
+
+		<div  class="feature-item">
+			<div class="feature-image animated fadeInLeft leftproductimage">
+				<img src=" {{ section.settings.spgimage | img_url: 'master'}} " />
+			</div>
+
+			<div class="feature-text animated fadeInRight rightproductbullets" style="text-align: left">
+				<ul>
+				{% for block in section.blocks %}
+					<li class="pbullet">
+						<h3 class="pbullettitle"><img src="{{block.settings.bicon | img_url: 'master'}}" class="pttwobicon"/>  {{block.settings.bullettitle}} </h3>
+						<span class="pbulletparagraph">{{block.settings.bullettext}}</span>
+					</li>
+				{% endfor %}
+				</ul>
+				
+			</div>
+		</div>
+		<div class="row row-med u-center">
+			<a href="{{section.settings.btnonelink}}" class="button inline btnsec">{{section.settings.btnonetext}}</a> &nbsp; <a href="{{section.settings.btntwolink}}" class="button inline">{{section.settings.btntwotext}}</a>
+		</div>
+	</div>
+</div>
+
+
+
+
+{% schema %}
+	{
+		"name": "Product Display Type 2",
+		"max_blocks": 4,
+		"settings": [
+			{
+				"id": "sectiontitle",
+				"type": "text",
+				"label": "Section Title",
+				"default": "Lift Rose's Anti-Aging Supplement"
+			},
+			{
+				"id": "sectionbg",
+				"type": "image_picker",
+				"label": "Section Background Image"
+			},
+			{
+				"id": "spgimage",
+				"type": "image_picker",
+				"label": "Product Graphic"
+			},
+			{
+				"id" : "btnonelink",
+				"type": "url",
+				"label": "Button One Link"
+			},
+			{
+				"id": "btnonetext",
+				"type": "text",
+				"label": "Button One Text",
+				"default": "Learn More"
+			},
+			{
+				"id" : "btntwolink",
+				"type": "url",
+				"label": "Button Two Link"
+			},
+			{
+				"id": "btntwotext",
+				"type": "text",
+				"label": "Button Two Text",
+				"default": "Buy Now"
+			}
+		],
+		"blocks": [
+			{
+				"name": "Product Bullet",
+				"type": "select",
+				"settings": [
+					{
+						"id": "bicon",
+						"type": "image_picker",
+						"label": "Bullet Icon"
+					},
+					{
+						"id": "bullettitle",
+						"type": "text",
+						"label": "Bullet Title",
+						"default": "Lorem ipsum"
+					},
+					{
+						"id": "bullettext",
+						"type": "richtext",
+						"label": "Bullet Paragraph",
+						"default": "<p>Lorem ipsum dolor. Lorem ipsum dolor. Lorem ipsum dolor.</p>"
+					}
+				]
+			}
+		],
+		"presets": [
+			{
+				"name": "Product Display Type 2",
+				"category": "Arielle Studios",
+				"blocks": [
+                    {
+                        "type": "select"
+                    },
+                    {
+                        "type": "select"
+                    },
+                    {
+                        "type": "select"
+                    },
+					{
+                        "type": "select"
+                    }
+                ]
+			}
+		]
+	}
+
+{% endschema %}
+
+{% stylesheet %}
+{% endstylesheet %}
+
+{% javascript %}
+{% endjavascript %}

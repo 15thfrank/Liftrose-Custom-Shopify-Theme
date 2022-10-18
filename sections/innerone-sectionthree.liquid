@@ -1,0 +1,153 @@
+<link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
+<script type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+<div class="container hsthree">
+	<div class="row row-lg ptone">
+		<h1 class="page-title__heading text-center"> {{section.settings.sectiontitle}} </h1>
+		<div class="container">
+			<div class="row">
+				<div class="s1 sm_s12 lg_s13 imgcenter animated fadeInUp" style="text-align: center;width:30%;float:left;" id="pt2img">
+					<img src=" {{ section.settings.spgimage | img_url: 'master'}} " style="max-width:75%;" />
+				</div>
+				<div class="s1 sm_s12 lg_s13 animated fadeInUp" style="text-align: right;width:70%;z-index: 999;float:left;display: inline-table;padding-top:30px;" id="innerones3">
+					<div class="pbullet bulletright" style="display: inline-flex;width:50%;">
+						<div class="bulletrightimg"><img src=" {{section.settings.bulletoneimg | img_url: 'master'}} " class=""/></div>
+						<div class="bulletleftparagraph">
+							<h3 class="pbullettitle"> {{section.settings.bulletonetitle}} </h3>
+							<p class="pbulletparagraph"> {{section.settings.bulletonetext}} </p>
+						</div>
+					</div>
+					<div class="pbullet bulletright" style="display: inline-flex;width:50%;">
+						<div class="bulletrightimg"><img src=" {{section.settings.bullettwoimg | img_url: 'master'}} " class=""/></div>
+						<div class="bulletleftparagraph">
+							<h3 class="pbullettitle"> {{section.settings.bullettwotitle}} </h3>
+							<p class="pbulletparagraph"> {{section.settings.bullettwotext}} </p>
+						</div>
+					</div>
+					<div class="pbullet bulletright" style="display: inline-flex;width:50%;">
+						<div class="bulletrightimg"><img src=" {{section.settings.bulletthreeimg | img_url: 'master'}} " class=""/></div>
+						<div class="bulletrightparagraph">
+							<h3 class="pbullettitle"> {{section.settings.bulletthreetitle}} </h3>
+							<p class="pbulletparagraph"> {{section.settings.bulletthreetext}} </p>
+						</div>
+						
+					</div>
+					<div class="pbullet bulletright" style="display: inline-flex;width:50%;">
+						<div class="bulletrightimg"><img src=" {{section.settings.bulletfourimg | img_url: 'master'}} " class=""/></div>
+						<div class="bulletrightparagraph">
+							<h3 class="pbullettitle"> {{section.settings.bulletfourtitle}} </h3>
+							<p class="pbulletparagraph"> {{section.settings.bulletfourtext}} </p>
+						</div>
+						
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="row row-med u-center">
+			<a href="{{section.settings.btnlink}}" class="button inline">{{section.settings.btntext}}</a>
+		</div>
+	</div>
+</div>
+
+{% schema %}
+	{
+		"name": "Product Display Type 1",
+		"settings": [
+			{
+				"id": "sectiontitle",
+				"type": "text",
+				"label": "Section Title",
+				"default": "Lift Rose Anti-Aging Booster Serum"
+			},
+			{
+				"id": "bulletonetitle",
+				"type": "text",
+				"label": "Bullet 1 Title",
+				"default": "Lorem ipsum"
+			},
+			{
+				"id": "bulletonetext",
+				"type": "richtext",
+				"label": "Bullet 1 Detail",
+				"default": "<p>Lorem ipsum dolor. Lorem ipsum dolor. Lorem ipsum dolor.</p>"
+			},
+			{
+				"id": "bulletoneimg",
+				"type": "image_picker",
+				"label": "Bullet 1 Image"
+			},
+			{
+				"id": "bullettwotitle",
+				"type": "text",
+				"label": "Bullet 2 Title",
+				"default": "Lorem ipsum"
+			},
+			{
+				"id": "bullettwotext",
+				"type": "richtext",
+				"label": "Bullet 2 Detail",
+				"default": "<p>Lorem ipsum dolor. Lorem ipsum dolor. Lorem ipsum dolor.</p>"
+			},
+			{
+				"id": "bullettwoimg",
+				"type": "image_picker",
+				"label": "Bullet 2 Image"
+			},
+			{
+				"id": "spgimage",
+				"type": "image_picker",
+				"label": "Product Graphic"
+			},
+			{
+				"id": "bulletthreetitle",
+				"type": "text",
+				"label": "Bullet 3 Title",
+				"default": "Lorem ipsum"
+			},
+			{
+				"id": "bulletthreetext",
+				"type": "richtext",
+				"label": "Bullet 3 Detail",
+				"default": "<p>Lorem ipsum dolor. Lorem ipsum dolor. Lorem ipsum dolor.</p>"
+			},
+			{
+				"id": "bulletthreeimg",
+				"type": "image_picker",
+				"label": "Bullet 3 Image"
+			},
+			{
+				"id": "bulletfourtitle",
+				"type": "text",
+				"label": "Bullet 4 Title",
+				"default": "Lorem ipsum"
+			},
+			{
+				"id": "bulletfourtext",
+				"type": "richtext",
+				"label": "Bullet 4 Detail",
+				"default": "<p>Lorem ipsum dolor. Lorem ipsum dolor. Lorem ipsum dolor.</p>"
+			},
+			{
+				"id": "bulletfourimg",
+				"type": "image_picker",
+				"label": "Bullet 4 Image"
+			},
+			{
+				"id": "btnlink",
+				"type": "url",
+				"label": "Button One Link"
+			},
+			{
+				"id": "btntext",
+				"type": "text",
+				"label": "Button One Text",
+				"default": "Buy Now"
+			}
+		]
+	}
+{% endschema %}
+
+{% stylesheet %}
+{% endstylesheet %}
+
+{% javascript %}
+{% endjavascript %}

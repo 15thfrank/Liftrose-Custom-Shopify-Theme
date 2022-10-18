@@ -1,0 +1,38 @@
+<div id="hplead" class="container-wrap" data-section-type="newsletter">
+	<div class="row row-lg feature-item">
+		<div class="feature-image"><p style="padding-top: 15px;"> {{ section.settings.ecapture_text }} </p></div>
+		<div class="feature-text">
+			{% form 'customer' style="margin-top: 0;" %}
+				<input type="email" name="email" id="homepagelead" style="float: left;border: 1px solid darkgrey;width: 60%;height: 48px;" placeholder="Enter email here...">
+				<input class="submit button" type="submit" style="min-width:20%;float: left;" value="{{ section.settings.ecapture_btntext }}">
+			{% endform %}
+		</div>
+	</div>
+</div>
+
+{% schema %}
+	{
+		"name": "Email Capture",
+		"class": "homepage_ecapture",
+		"settings": [
+			{
+				"id": "ecapture_text",
+				"type": "text",
+				"label": "Text",
+				"default": "Register your email to receive offers, discounts and get 10% OFF your first purchase."
+			},
+			{
+				"id": "ecapture_btntext",
+				"type": "text",
+				"label": "Button Text",
+				"default": "Register"
+			}
+		]
+	}
+{% endschema %}
+
+{% stylesheet %}
+{% endstylesheet %}
+
+{% javascript %}
+{% endjavascript %}

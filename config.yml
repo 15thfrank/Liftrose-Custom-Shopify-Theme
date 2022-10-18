@@ -1,0 +1,6 @@
+development:
+   theme_id: 76821889088
+   password: fa1c3e795e5fea3b3d8b78b446a7da9a
+   store: liftrose.myshopify.com
+   bucket_size: 40
+   refill_rate: 2

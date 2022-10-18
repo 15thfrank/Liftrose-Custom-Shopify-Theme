@@ -1,0 +1,81 @@
+<div class="hssix">
+	<div class="text-center">
+		<h1 class="text-center page-title__heading"> {{section.settings.vstitle}} </h1>
+		<div class="video-wrapper" style="max-width: 920px;max-height: 485px;margin: 0 auto;">
+			<link rel="stylesheet" href="https://cdn.plyr.io/3.5.6/plyr.css" />
+			<script src="https://cdn.plyr.io/3.5.6/plyr.js"></script>
+			<video controls crossorigin playsinline poster="{{section.settings.posterimg | img_url: 'master'}}" id="vplayer" >
+                <source src="{{section.settings.videourlmp4}}" type="video/mp4" size="920" />
+				<source src="{{section.settings.videourlwebm}}" type='video/webm' size="920" />
+            </video>
+			<script type="text/javascript">
+				document.addEventListener('DOMContentLoaded', () => { 
+				// This is the bare minimum JavaScript. You can opt to pass no arguments to setup.
+				const player = new Plyr('#vplayer');
+				
+				// Expose
+				window.player = player;
+
+				// Bind event listener
+				function on(selector, type, callback) {
+					document.querySelector(selector).addEventListener(type, callback, false);
+				}
+				});
+			</script>
+		</div>
+		<a href=" {{section.settings.btnlink}} " class="btn"> {{section.settins.btntext}} </a>
+	</div>
+</div>
+
+
+{% schema %}
+	{
+		"name": "Product Video",
+		"settings": [
+			{
+				"id": "vstitle",
+				"type": "text",
+				"label": "Section Title",
+				"default": "How To Use Our Products"
+			},
+			{
+				"type": "url",
+				"id": "videourlmp4",
+				"label": "MP4 Video URL"
+			},
+			{
+				"type": "url",
+				"id": "videourlwebm",
+				"label": "WEBM Video URL"
+			},
+			{
+				"type": "image_picker",
+				"id": "posterimg",
+				"label": "Poster Image"
+			},
+			{
+				"id": "btnlink",
+				"type": "url",
+				"label": "Button URL"
+			},
+			{
+				"id": "btntext",
+				"type": "text",
+				"label": "Button Text",
+				"default": "Buy Now"
+			}
+		],
+		"presets": [
+			{
+                "name": "Product Video",
+                "category": "Arielle Studios"
+            }
+		]
+	}
+{% endschema %}
+
+{% stylesheet %}
+{% endstylesheet %}
+
+{% javascript %}
+{% endjavascript %}

@@ -1,0 +1,101 @@
+<div class="section-mosaic container-wrap">
+    <div data-section-id="{{ section.id }}" data-section-type="video-section" class="video-parent-section hero hero--{{ section.id }} hero--{{ section.settings.section_height }}" data-aos="hero__animation">
+        <div class="hero__media hero__media--{{ section.id }}">
+
+            {% if section.settings.video_url contains 'youtube.com/watch' %}
+            {%- assign video_id = section.settings.video_url | split: 'v=' -%}
+            {%- assign video_id = video_id[1] | split: '&' | first -%}
+            <div id="YouTubeVideo-{{ section.id }}" data-video-id="{{ video_id }}"></div>
+            {% endif %}
+
+            {% if section.settings.video_url contains 'youtu.be/' %}
+            {%- assign video_id = section.settings.video_url | split: '.be/' -%}
+            {%- assign video_id = video_id[1] | split: '&' | first -%}
+            <div id="YouTubeVideo-{{ section.id }}" data-video-id="{{ video_id }}"></div>
+            {% endif %}
+
+            {% if section.settings.video_url contains 'vimeo.com' %}
+            {%- assign video_id = section.settings.video_url | split: '.com/' -%}
+            {%- assign video_id = video_id[1] | split: '/' | first -%}
+            <div id="Vimeo-{{ section.id }}" data-video-id="{{ video_id }}"></div>
+            {% endif %}
+
+            {% if section.settings.video_url contains '.mp4' %}
+            <video id="Mp4Video-{{ section.id }}" src="{{ section.settings.video_url }}" loop muted playsinline autoplay></video>
+            {% endif %}
+
+        </div>
+    </div>
+	<div class="row row-lg">
+		<div class="block block--left block--default-height s1 lg_s12" style="text-align: center;">
+			<img src="{{section.settings.pimage | img_url: 'medium' }}" class="mx-auto d-block" />
+		</div>
+		<div class="block block--default-height s1 lg_s12" style="padding-top:80px;">
+            <img src=" {{section.settings.iconrose | img_url: 'medium'}} " style="max-width: ; max-height: ;" width="" height="" />
+			<h1 class="slide-content__heading size--large">{{ section.settings.title }}</h1>
+			<p>{{section.settings.subtitle}}</p>
+			<a href="{{ section.settings.link }}" class="button button--normal button--primary">{{section.settings.btntext}}</a>
+		</div>
+	</div>
+</div>
+
+{% schema %}
+        {
+        "name": "AboveFold Banner",
+        "class": "above-the-fold",
+        "settings": [
+            {
+                "id": "iconrose",
+                "type": "image_picker",
+                "label": "icon"
+            },
+            {
+                "id": "pimage",
+                "type": "image_picker",
+                "label": "Image"
+            },
+            {
+                "id": "title",
+                "type": "text",
+                "label": "Headline",
+                "default": "Time to Look and Feel Young, and Fresh!"
+            },
+            {
+                "id": "subtitle",
+                "type": "text",
+                "label": "Sub Headline",
+                "default": "Life Rose is a multifunctional treatment for soft, hydrate, and natural skin."
+            },
+            {
+                "id": "btntext",
+                "type": "text",
+                "label": "Buton text",
+                "default": "Buy Now"
+            },
+            {
+                "id": "link",
+                "type": "url",
+                "label": "Button Link"
+            },
+            {
+            "type": "text",
+            "id": "video_url",
+            "label": "Background video link",
+            "default": "https://www.youtube.com/watch?v=_9VUPq3SxOc",
+            "info": "Supports YouTube (recommended), .MP4 and Vimeo. Not all features supported by Vimeo."
+            }
+        ],
+        "presets": [
+            {
+            "name": "Above the Fold Banner",
+            "category": "Arielle Studios"
+            }
+        ]
+}
+{% endschema %}
+
+{% stylesheet %}
+{% endstylesheet %}
+
+{% javascript %}
+{% endjavascript %}

@@ -1,0 +1,131 @@
+<div class="container-wrap {{section.settings.displaybool}}" style="background-color: #000;min-height:450px;" id="blackfriday">
+    <div class="row row-lg">
+        <div><h1>{{section.settings.sectiontitle}}</h1></div>
+        <div style="" class="picarousel">
+            {% for block in section.blocks %}
+            <div class="sproductcard s14" style="padding:0px;">
+                <div style="background-color:#000;">
+                    <img src ="{{block.settings.productgraphic | img_url: 'master'}}" style="width:100%;margin-bottom:10px;">
+                    <h3 style="text-align:center;margin-bottom:5px;padding: 1px 5px;">{{block.settings.textfieldone}}</h3>
+                    <div>
+                        
+                    </div>
+                </div>
+                <div style="background-color:#1f1f1f;padding: 5px;">
+                    <div style="background-color:#1f1f1f;padding: 5px;">
+                        <h3 style="text-align:left;color: #fff;">{{block.settings.textfieldtwo}}</h3>
+                    </div>
+                    <div style="background-color:#1f1f1f; height:50px;">
+                        <div class="text-center" style="width:25%;float:left;padding-top: 8px;"><p style="margin-bottom:5px;color:grey;text-decoration:line-through;">${{block.settings.compamt}}</p></div>
+                        <div class="text-center" style="width:25%;float:left;padding-top: 8px;"><p style="margin-bottom:5px;color:#fff;">${{block.settings.nowamt}}</p></div>
+                        <div class="text-center" style="width:50%;float:left;min-width: 30px;"><a href="{{block.settings.btnurl}}" class="button text-center" style="min-width: 100px;min-height: 20px;padding: 5px 5px;">{{block.settings.btntext}}</a></div>
+                    </div>
+                </div>
+                <div style="top: 0;left: 0;right: 0;position: absolute;height: 50px;">
+                   <div class=" {{block.settings.enablebts}} " style="">
+                       <p style="color:#fff;">Best Seller</p>
+                   </div>
+                    <div style="float: right!important;width: 0!important;height: 0!important;border-top: 100px solid #dd037d!important;border-left: 100px solid transparent!important;display:none;"><p class="text-center" style="color: #000;padding-top: 10px;top: 40%;right: 0;z-index: 999999;position: absolute;transform: rotate(45deg);"><strong>{{block.settings.discountp}}% OFF</strong></p></div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</div>
+
+
+{% schema %}
+    {
+        "name": "Black Friday 2",
+        "max_blocks": 10,
+        "settings": [
+            {
+                "label": "Section Title",
+                "id": "sectiontitle",
+                "type": "text",
+                "default": "Black Friday Offers"
+            },
+            {
+                "type":      "radio",
+                "id":        "displaybool",
+                "label":     "Display Black-Friday Section?",
+                "options": [
+                    { "value": "displayyes", "label": "Yes" },
+                    { "value": "displayno", "label": "No" }
+                ],
+                "default":   "displayyes"
+            }
+        ],
+        "blocks": [
+            {
+                "name": "Product Option",
+                "type": "select",
+                "settings": [
+                    {
+                        "label": "Option Graphic",
+                        "type": "image_picker",
+                        "id": "productgraphic"
+                    },
+                    {
+                        "label": "Discount Percentage",
+                        "type": "text",
+                        "id": "discountp",
+                        "default": "XX"
+                    },
+                    {
+                        "label": "Text Field One",
+                        "type": "text",
+                        "id": "textfieldone",
+                        "default": "10ml Anti-Aging Serum (Travel Size)"
+                    },
+                    {
+                        "label": "Text Field Two",
+                        "type": "text",
+                        "id": "textfieldtwo",
+                        "default": "10ml / 0.3oz Serum Gift Size"
+                    },
+                    {
+                        "label": "Compare Price",
+                        "type": "text",
+                        "id": "compamt",
+                        "default": "XX"
+                    },
+                    {
+                        "label": "Price",
+                        "type": "text",
+                        "id": "nowamt",
+                        "default": "XX"
+                    },
+                    {
+                        "label": "Button Text",
+                        "type": "text",
+                        "id": "btntext",
+                        "default": "Buy Now"
+                    },
+                    {
+                        "label": "Button URL",
+                        "type": "url",
+                        "id": "btnurl"
+                    },
+                    {
+                       "type": "radio",
+                       "id": "enablebts",
+                       "options": [
+                          { "value": "isbestsellerq", "label": "Yes"},
+                          { "value": "isnotbestsellerq", "label": "No"}
+                       ],
+                       "label": "Is best seller?",
+                       "default":   "isnotbestsellerq",
+                       "info": "Check if you want Best Seller label displayed on this product"
+                    }
+                ]
+            }
+        ]
+    }
+{% endschema %}
+
+{% stylesheet %}
+{% endstylesheet %}
+
+{% javascript %}
+{% endjavascript %}

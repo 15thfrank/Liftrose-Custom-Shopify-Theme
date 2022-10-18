@@ -1,0 +1,91 @@
+<div class="container hsfive" style="">
+	<div class="row">
+		<div  class="feature-item feature-item--odd">
+			<div class="feature-image animated fadeInLeft leftproductimage" style="background: url({{section.settings.spgimage | img_url: 'master'}}) no-repeat;background-size: cover;min-height: 550px;background-position: bottom;">
+				<p>&nbsp;</p>
+			</div>
+
+			<div class="feature-text animated fadeInRight rightproductbullets" style="text-align: left;margin: 80px 30px 0 70px; height:470px;">
+				<h1 class="page-title__heading text-center"> {{section.settings.sectiontitle}} </h1>
+				<ul>
+				{% for block in section.blocks %}
+					<li class="pbullet" style="padding-top:25px;display: inline-flex;">
+						<img src="{{block.settings.bicon | img_url: 'master'}}" class="pttwobicon"/>
+						<h3 class="pbullettext" style="padding-left: 10px;">  {{block.settings.bullettext}} </h3>
+					</li>
+				{% endfor %}
+				</ul>
+				<p class="disclaimertxt" style="margin-top:70px;color:#b7b7b7"> {{section.settings.disclaimertxt}} </p>
+			</div>
+		</div>
+		<div class="text-center">
+			<a href="{{section.settings.btnlink}}" class="button inline">{{section.settings.btntext}}</a>
+		</div>
+	</div>
+</div>
+
+
+
+
+{% schema %}
+	{
+		"name": "Facts Section",
+		"max_blocks": 4,
+		"settings": [
+			{
+				"id": "sectiontitle",
+				"type": "text",
+				"label": "Section Title",
+				"default": "How to Apply LiftRose Booster Serum"
+			},
+			{
+				"id": "spgimage",
+				"type": "image_picker",
+				"label": "Image"
+			},
+			{
+				"id": "disclaimertxt",
+				"type": "text",
+				"label": "Disclaimer",
+				"default": "*Lorem ipsum dolor. Lorem ipsum dolor."
+			},
+			{
+				"id" : "btnlink",
+				"type": "url",
+				"label": "Button Link"
+			},
+			{
+				"id": "btntext",
+				"type": "text",
+				"label": "Button Text",
+				"default": "Learn More"
+			}
+		],
+		"blocks": [
+			{
+				"name": "Product Bullet",
+				"type": "select",
+				"settings": [
+					{
+						"id": "bicon",
+						"type": "image_picker",
+						"label": "Bullet Icon"
+					},
+					{
+						"id": "bullettext",
+						"type": "text",
+						"label": "Bullet Title",
+						"default": "Lorem ipsum dolor. Lorem ipsum dolor. Lorem ipsum dolor."
+					}
+				]
+			}
+		]
+	}
+
+{% endschema %}
+
+{% stylesheet %}
+{% endstylesheet %}
+
+{% javascript %}
+{% endjavascript %}

@@ -1,0 +1,104 @@
+<div class="container-wrap {{section.settings.displaybool}}" style="" id="spsone">
+    <div class="row row-lg">
+        <div><h1>{{section.settings.sectiontitle}}</h1></div>
+        <div style="" class="picarousel">
+            {% for block in section.blocks %}
+            <div class="sproductcard s14">
+                <img src ="{{block.settings.optiongraphic | img_url: 'master'}}" style="width:100%;margin-bottom:10px;margin-top: -10px;">
+                <h3 style="text-transform: uppercase; text-align:center;margin-bottom:5px;">{{block.settings.productoptiontitle}}</h3>
+                <div>
+                    <p style="margin-bottom:5px;">{{block.settings.textfieldone}}</p>
+                    <p style="margin-bottom:5px;">{{block.settings.textfieldtwo}}</p>
+                    <p style="margin-bottom:5px;font-weight:bold"><strong>Plus {{block.settings.textfieldthree}}% discount</strong></p>
+                </div>
+                <div>
+                    <p style="margin-bottom:5px;">{{block.settings.textfieldfour}}</p>
+                </div>
+                <div class="text-center"><a href="{{block.settings.btnfield}}" class="button text-center">Buy Now</a> </div>
+                <div style="top: 0;left: 0;right: 0;position: absolute;height: 50px;">
+                    <div style="float: right!important;width: 0!important;height: 0!important;border-top: 100px solid #dd037d!important;border-left: 100px solid transparent!important;"><p class="text-center" style="color: #fff;padding-top: 10px;top: 40%;right: 0;z-index: 999999;position: absolute;transform: rotate(45deg);"><strong>{{block.settings.textfieldthree}}% OFF</strong></p></div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</div>
+
+{% schema %}
+    {
+        "name": "Anti Aging Serum Options",
+        "max_blocks": 4,
+        "settings": [
+            {
+                "label": "Section Title",
+                "id": "sectiontitle",
+                "type": "text",
+                "default": "LiftRose Anti Aging Booster Serum"
+            },
+            {
+                "type":      "radio",
+                "id":        "displaybool",
+                "label":     "Display Section?",
+                "options": [
+                    { "value": "displayyes", "label": "Yes" },
+                    { "value": "displayno", "label": "No" }
+                ],
+                "default":   "displayyes"
+            }
+        ],
+        "blocks": [
+            {
+                "name": "Product Option",
+                "type": "select",
+                "settings": [
+                    {
+                        "label": "Option Graphic",
+                        "type": "image_picker",
+                        "id": "optiongraphic"
+                    },
+                    {
+                        "label": "Product Option Title",
+                        "type": "text",
+                        "id": "productoptiontitle",
+                        "default": "X Month Treatment"
+                    },
+                    {
+                        "label": "Text Field One",
+                        "type": "text",
+                        "id": "textfieldone",
+                        "default": "Includes:..."
+                    },
+                    {
+                        "label": "Text Field Two",
+                        "type": "text",
+                        "id": "textfieldtwo",
+                        "default": "Original Price:..."
+                    },
+                    {
+                        "label": "Discount Amount",
+                        "type": "text",
+                        "id": "textfieldthree",
+                        "default": "X"
+                    },
+                    {
+                        "label": "Text Field Four",
+                        "type": "text",
+                        "id": "textfieldfour",
+                        "default": "Final price "
+                    },
+                    {
+                        "label": "Button Link",
+                        "type": "url",
+                        "id": "btnfield"
+                    }
+                ]
+            }
+        ]
+    }
+{% endschema %}
+
+{% stylesheet %}
+{% endstylesheet %}
+
+{% javascript %}
+{% endjavascript %}
